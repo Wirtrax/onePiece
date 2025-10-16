@@ -1,0 +1,101 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+} 
+@font-face {
+    font-family: lexend exa_zz;
+    src: url(entities/fonts/lexa/LexendExa-VariableFont_wght.ttf);
+   
+}
+body{
+    background-color:rgba(32, 32, 32, 1);
+    color: white;
+    font-family: lexend exa_zz, sans-serif;
+}
+:root{
+    --index:calc(1vw + 1vh);
+}
+/*редактирование объекта*/
+
+
+.admin__edit {
+    width: 50%;
+    position: absolute;
+    inset:0 0 50% 50%;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.719);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+}
+
+.admin__edit:hover{
+    opacity: 1;
+}
+.edit__text {
+    padding: calc(var(--index)*1);
+    border-radius: 10px;
+    font-size: calc(var(--index)*1);
+    background-color:rgba(37, 37, 37, 1);
+    cursor: pointer;
+}
+.edit__svg {
+    width:calc(var(--index)*1);
+    max-width: 60px;
+    margin-bottom: -4px;
+}
+
+/*форма редактирования данных*/
+.edit__input-cont{
+    display: flex;
+    width: 100%;
+    align-items: start;
+    justify-content: space-around;
+    flex-wrap: wrap;
+   gap: 20px;
+}
+.edit {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-around;
+    gap: 30px;
+    position: relative;
+}
+.popup-edit {
+    margin: 15% auto 0 auto;
+    width: 100%;
+    max-width: 800px;
+    padding: 30px;
+    background: rgb(51, 51, 51);
+    border-radius: 15px;
+}
+.inputeditsize{
+    min-width: 200px;
+    max-height: 300px;
+}
+.area{
+   
+    max-height: 600px;
+   
+
+}
+/*создание нового блока*/
+.added{
+    width: 50%;
+    margin: 0 auto;
+    padding: 25px;
+    background: rgb(51, 51, 51);
+}
+.added__form{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-around;
+    gap: 30px;
+    position: relative;
+}

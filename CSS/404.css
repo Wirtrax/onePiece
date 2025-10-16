@@ -1,0 +1,105 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+::-webkit-scrollbar {
+    width: 0;
+  }
+:root{
+    --index:calc(1vw + 1vh);
+    --transition: 1.5s cubic-bezier(0.05, 0.5, 0, 1);
+}
+@font-face {
+    font-family: "Ravie";
+    src: url("https://fontsforyou.com/fonts/r/Ravie.ttf");
+}
+body{
+    /*background-color: antiquewhite;*/
+    color: white;
+    font-family: "Ravie";
+}
+.layers{
+    perspective: 1000px;
+    overflow: hidden;
+}
+.layers__container{
+    height: 100vh;
+    transform-style:preserve-3d;
+    transform: rotateX(var(--move-y)) rotateY(var(--move-x));
+    will-change: transform;
+    transition: transform var(--transition);
+}
+.layers__item{
+    position: absolute;
+    inset: -5vw;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.layers-1{
+    transform: translateZ(-55px) 
+    scale(1.06);
+}
+.layers-2{
+    transform: translateZ(10px)
+    scale(.8);
+}
+.layers-3 {
+    transform: translateZ(100px)
+    scale(.8);
+}
+.layers-4{
+    transform: translateZ(150px)
+    scale(.88);;
+}
+.layers-5{
+    transform: translateZ(40px)
+    scale(.9);
+}
+.layers-6{
+    transform: translateZ(200px);
+}
+.layers-7{
+    transform: translateZ(100px)
+    scale(.8);
+    position: absolute;
+    top: 50%;
+}
+
+.hero-content{
+    position: absolute;
+    top: 20%;
+    text-align: center;
+    color: #fffbeb; 
+    font-size: calc(var(--index)*2.5) ;
+    font-family: "Ravie";
+    line-height: 1.35em;
+}
+.hero-content__p{
+    text-transform: none;
+    font-size: calc(var(--index)*1.5) ;
+    color: #fffbeb;
+}
+.btn-start{
+    position: absolute;
+	left: calc(49.5% - calc(calc(var(--index) * 7.8) / 2));
+	top: 75%;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: calc(var(--index)* .71);
+    letter-spacing: -.02vw;
+    padding: calc(var(--index)* .7) calc(var(--index)* 1.25) ;
+    background-color: transparent;
+    color: white;
+    border-radius: 10em;
+    border:rgba(255, 255, 255, 0.767) 3px solid; 
+    outline: none;
+    cursor: pointer;
+}
+.layers-4, .layers-5, .layers-6 {
+	pointer-events: none;
+}

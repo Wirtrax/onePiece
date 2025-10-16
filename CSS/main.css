@@ -1,0 +1,292 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+} 
+@font-face {
+    font-family: lexend exa_zz;
+    src: url(entities/fonts/lexa/LexendExa-VariableFont_wght.ttf);
+   
+}
+body{
+    background-color:rgba(32, 32, 32, 1);
+    color: white;
+    font-family: lexend exa_zz, sans-serif;
+}
+.bgcolor{
+    background-color:rgba(37, 37, 37, 1);
+    width: 100%;
+}
+:root{
+    --index:calc(1vw + 1vh);
+    --transition: transform .75s cubic-bezier(.075, .5, 0, 1);
+}
+
+
+.content{
+    will-change: transform;
+}
+
+/* navigation 
+@import url();*/
+
+
+/* mainScreen */
+.main-header{
+    position: relative;
+    background-color:rgba(32, 32, 32, 1);
+}
+.layers {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	overflow: hidden;
+	position: relative;
+    transition: var(--transition);
+}
+.layer{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    will-change: transform;
+}
+.layer__base{
+    transform: translate3d(0, calc(var(--scrollTop) / 1.6),0);
+    transition: var(--transition);
+    z-index: 0;
+    will-change: transform;
+   
+}
+.layer__front {
+	transform: translate3d(0, calc(var(--scrollTop) / 5.7), 0);
+    transition: var(--transition);
+    
+}
+
+/*a block with little information about arches*/
+
+
+.block{
+    position: relative;
+    max-width: 1630px;
+    padding: 30px 30px 0px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: calc(var(--index)*1.4);
+}
+
+/*заголовок с линиями и фоткой ван пис */
+.titile-history{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%;
+
+}
+.titile-history__line{
+    height: 3px;
+    width: 100%;
+    max-width: 600px;
+    border: none;
+    position: relative;
+}
+.left{
+    background: linear-gradient(to right, rgba(230, 188, 122, 0.35) , rgba(230, 188, 122, 1));
+}
+.right{
+    background: linear-gradient(to left, rgba(230, 188, 122, 0.35) , rgba(230, 188, 122, 1));
+}
+.left::after{
+    content: "";
+    position: absolute;
+    display: block;
+    height: 13px;
+    width: 13px;
+    background-color: rgb(255, 255, 255);
+    transform: rotate(45deg);
+    right: 0px;
+    top: -8px;
+    border:3px rgba(228, 186, 121, 1) solid ;
+}
+.right::before{
+    content: "";
+    position: absolute;
+    display: block;
+    height: 13px;
+    width: 13px;
+    background-color: rgb(255, 255, 255);
+    transform: rotate(45deg);
+    left: 0px;
+    top: -8px;
+    border:3px rgba(228, 186, 121, 1) solid ;
+}
+.titile-history__image{
+    width: calc(var(--index)*9);
+    max-width: 230px;
+    margin: 0px 2%;
+}
+/* непосредственно информационный блок с кнопкой и фоточкой */
+.information-block{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: calc(var(--index)*0.75);
+}
+.reverse{
+    flex-direction: row-reverse;
+}
+.prologue{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: center;
+    width: 50%;
+    min-width: 300px;
+    gap: 20px;
+}
+.image__history{
+    position: relative;
+    width: 40%;
+}
+.image__history img{
+    
+    width: 100%;
+    max-width: 630px;
+    
+}
+.information-block__text{
+    word-break:break-all;
+    font-size: calc(var(--index)*0.75);
+}
+.btn__history{
+    padding:calc(var(--index)*0.5) calc(var(--index)*0.7);
+    border: 2px rgba(231, 171, 88, 1) solid;
+    color: rgba(231, 171, 88, 1);
+    font-size: calc(var(--index)*0.6);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.svg__history{
+    width:calc(var(--index)) ;
+}
+
+
+/*pop-up*/
+
+.popup-bg ,.popup-bg-auth,.popup-bg-edit {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.623);
+    display: none;
+}
+.popup {
+    margin: 15% auto 0 auto;
+    width: 100%;
+    max-width: 420px;
+    padding: 30px;
+    background: rgb(51, 51, 51);
+    border-radius: 15px;
+}
+.registration ,.auth{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-around;
+    gap: 30px;
+    position: relative;
+}
+.registration label ,.auth label,.edit label{
+    text-align: center;
+    font-size: calc(var(--index)*1.2);
+}
+.popup__input {
+    background: rgba(178, 34, 34, 0);
+    border: none;
+    border-bottom:1px rgba(231, 171, 88, 1) solid; 
+    padding: 12px 0;
+    font-size: calc(var(--index)*0.6);
+    color: white;
+}
+.popup__input::placeholder{
+    color: rgb(211, 211, 211);
+    font-size: calc(var(--index)*0.6);
+}
+.popup__btn{
+    border:2px rgba(231, 171, 88, 1) solid; 
+    max-width: 100%;
+    color: rgb(0, 0, 0);
+    padding: 13px;
+    background:rgb(255, 255, 255) ;
+    font-weight: bolder;
+    border-radius: 5px;
+    padding: 5px 0;
+    
+}
+.popup__btn:hover{
+    color: rgb(255, 255, 255);
+    background:rgba(231, 171, 88, 1) ;
+}
+.popup__pd{
+    position: absolute;
+    right: -4%;
+    top: -4%;
+    padding: 10px;
+    cursor: pointer;
+}
+.auth-text{
+    font-size: calc(var(--index)*0.6);
+}
+.auth-link{
+    color: rgba(231, 171, 88, 1) ;
+}
+.close-popup-x{
+    width: 20px;
+    height: 2px;
+    position: absolute;
+    right: 0;
+    background-color: rgb(255, 255, 255);
+    transform: rotate(45deg);
+}
+.close-popup-x::after{
+    content: "";
+    width: 20px;
+    height: 2px;
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    transform: rotate(90deg);
+}
+
+@media  (max-width:850px) {
+    .information-block{
+        flex-direction: column;
+        width: 100%;
+    }
+    .prologue{
+        
+    }
+    .popup__input::placeholder, .popup__btn{
+        
+        font-size: calc(var(--index));
+    }
+}

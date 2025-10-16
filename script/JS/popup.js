@@ -1,0 +1,19 @@
+$('.open-popup').click(function(e){
+    e.preventDefault();
+    $('.popup-bg').fadeIn(600);
+});
+$('.auth-link').click(function(e){
+    e.preventDefault();
+    $('.popup-bg').fadeOut(600);
+    $('.popup-bg-auth').fadeIn(600);
+});
+$('.close-popup').click(function(){
+    $('.popup-bg').fadeOut(600);
+    $('.popup-bg-auth').fadeOut(600);
+    $('.popup-bg-edit').fadeOut(600);
+
+});
+$('.edit__text').click(function(e){
+    e.preventDefault();
+    $('.popup-bg-edit').fadeIn(600);
+});

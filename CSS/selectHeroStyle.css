@@ -1,0 +1,209 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+} 
+@font-face {
+    font-family: lexend exa_zz;
+    src: url(entities/fonts/lexa/LexendExa-VariableFont_wght.ttf);
+}
+body{
+    background-color:rgba(32, 32, 32, 1);
+    color: white;
+    font-family: lexend exa_zz, sans-serif;
+}
+
+:root{
+    --index:calc(1vw + 1vh);
+}
+/*bgimage*/
+.bgimage{
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    z-index: -10;
+}
+
+/* navigation */
+
+/*selectorBlock*/
+.select{
+    width: 100%;
+    padding: calc(var(--index)*1.4);
+    background-color: rgba(32, 32, 32, 1);
+    margin-top: calc(var(--index)*2.8);
+    box-shadow: 9px 5px 4px 4px rgba(0, 0, 0, 0.4);
+}
+.selector{
+    width: 100%;
+    max-width: 1600px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+/*левая секция с поиском икартинкой*/
+.leftSelector, .rightSelector{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(var(--index)*0.7);
+    font-weight: 550px;    
+}
+.leftSelector__icon{
+    width: calc(var(--index)*3.3);
+    max-width: 75px;
+    height: calc(var(--index)*3);
+    max-height: 64px;
+}
+.leftSelector__form{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.leftSelector__form input{
+    all: unset;
+    color: #FFFFFF;
+    font-size: calc(var(--index)*0.7);
+    font-weight:400;
+    text-transform: uppercase
+}
+.leftSelector__form input::placeholder{
+    color: #FFFFFF;
+    font-size: calc(var(--index)*0.7);
+    font-weight: 400;
+}
+/*правая секция с графикой*/
+.rightSelector{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+.rightSelector__icon{
+    position: relative;
+    background-color: #FFFFFF;
+    width: calc(var(--index)*1.6);
+    max-width: 30px;
+    height: 2px;
+    margin-right: 20px;
+}
+.rightSelector__icon::before{
+    content: "";
+    position: absolute;
+    display: block;
+    height: 2px;
+    width: calc(var(--index)*2.2);
+    max-width: 50px;
+    top: -10px;
+    margin: 0 auto;
+    background-color: #ffffff;
+}
+.rightSelector__icon::after{
+    content: "";
+    position: absolute;
+    display: block;
+    height: 2px;
+    width: calc(var(--index)*1);
+    max-width: 20px;
+    top: 10px;
+    margin: 0 auto;
+    background-color: #ffffff;
+}
+.rightSelector_input{
+    color: rgb(196, 196, 196, 1);
+}
+.rightSelector__form-item {
+    all: unset;
+    font-size: calc(var(--index)*0.7);
+    
+}
+.rightSelector__form-item option{
+    color: #FFFFFF;
+    
+}
+/*character cards*/
+.conteinerCards{
+    width: 100%;
+    max-width: 1300px;
+    display: flex;
+    row-gap:30px;
+    column-gap:20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: calc(var(--index)*3.3);
+}
+.card{
+    position: relative;
+    width: calc(var(--index)*10);
+    max-width: 240px;
+    height: calc(var(--index)*15);
+    max-height: 425px;
+    border-radius: 5px;
+    background-color: rgba(30, 30, 30, 1);
+    border: rgba(224, 193, 193, 1) 1px solid;
+    background-size: cover;
+    background-position: center;
+}
+.card-photoHero, .card-hoverInformation{
+    position: absolute;
+    bottom: 0px;
+    width: calc(var(--index)*10);
+    max-width: 238px;
+    height: calc(var(--index)*15);
+    max-height: 425px;
+}
+.card-hoverInformation{
+    
+    max-height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.card-hoverInformation__link{
+    text-align: center;
+    text-decoration: none;
+    font-size:30px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+.card-hoverInformation__link span{
+    position: absolute;
+    top: 30%;
+    bottom:0px;
+    right: 2px;
+    left: 0px;
+    background-color:rgb(30, 30, 30);
+    border-top: rgb(224, 193, 193) 1px solid;
+    opacity: 0.8;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 300ms cubic-bezier(0.805, 0.000, 0.155, 0.380);
+}
+.card-hoverInformation__link span:hover{
+    opacity: 1;
+    background-color:rgb(30, 30, 30);
+    color: rgb(230, 189, 122);
+}
+@media (max-width:600px) {
+    .rightSelector{
+        display: none;
+    }
+}
